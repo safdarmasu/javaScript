@@ -16,8 +16,9 @@ const span_sport = document.getElementById('span_sport');
 var gender = document.querySelectorAll('input[name="gender"]');
 const span_gender = document.getElementById('span_gender');
 
-const country = document.querySelectorAll('input[name="country"]');
+const country = document.getElementById('country');
 const span_Country = document.getElementById('span_Country');
+
 
 
 function Save(){
@@ -71,9 +72,9 @@ function Save(){
     }
 
     // Sports Span
-
+    const isSportChacked = []
     if(sports.length > 0){
-        const isSportChacked = []
+      
         for (let i = 0; i < sports.length; i++) {
             // console.log(sports[i]);
             const ischacked = sports[i]
@@ -97,9 +98,8 @@ function Save(){
     }
 
     // Gender Span
-
+    const isInputEntered = []
     if(gender.length > 0 ){
-        const isInputEntered = []
         for (let i = 0; i < gender.length; i++){
             const isEntered = gender[i]
 
@@ -123,30 +123,72 @@ function Save(){
 
     // Country Span
 
-    // if (!country.value) {
-    //     span_Country.style.display = "block";
-    //     // country.style.borderColor = "red" 
-    //   } else {
-    //     span_Country.style.display = "none";
-    //     country.style.borderColor = "#6c757d";
-    //   }
+    if (!country.value) {
+        span_Country.style.display = "block";
+        // country.style.borderColor = "red" 
+      } else {
+        span_Country.style.display = "none";
+        country.style.borderColor = "#6c757d";
+      }
 
+
+      // Validation
 
     if (
         Name.value &&
         email.value &&
-        pass.value &&
         address.value &&
-        // country.value &&
-        isSportChacked.length != 0 &&
-        isInputEntered.length != 0
+        country.value &&
+        pass.value &&
+        pass.value.length > 4 &&
+        pass.value.length < 12 &&
+        isSportChacked.length !=0 &&
+        isInputEntered.length !=0
       ){
-        alert("Done");
-        console.log("done");
+        const formData = {
+            name: Name.value,
+            email: email.value,
+            password: pass.value,
+            address: address.value,
+            sport: isSportChacked,
+            gender: isInputEntered,
+            country: country.value,
+        };
+        handleTableData(formData);
+        Reset();
       }
+}
 
+function handleTableData(formData){
+        const tr = document.createElement('tr');
+        // console.log(tr);
+        const nameTd = document.createElement('td');
+        const emailTd = document.createElement('td');
+        const passTd = document.createElement('td');
+        const addressTd = document.createElement('td');
+        const sportsTd = document.createElement('td');
+        const genderTd = document.createElement('td');
+        const countryTd = document.createElement('td');
 
+        nameTd.innerHTML = formData.name;
+        emailTd.innerHTML = formData.email;
+        passTd.innerHTML = formData.password;
+        addressTd.innerHTML = formData.address;
+        sportsTd.innerHTML = formData.sport;
+        genderTd.innerHTML = formData.gender;
+        countryTd.innerHTML = formData.country;
 
+        tr.append(
+            nameTd,
+            emailTd,
+            passTd,
+            addressTd,
+            sportsTd,
+            genderTd,
+            countryTd
+        );
+            console.log(tr);
+            tableBody.appendChild(tr);
 }
 
 function Reset(){

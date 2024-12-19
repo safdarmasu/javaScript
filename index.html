@@ -44,8 +44,8 @@
             <label>
                 <p><b> Select your country</b></p>
             </label><br>
-            <select class="country" id="coutry">
-                <option value="USA" name="country">Please Select Country</option>
+            <select class="country" id="country">
+                <option value="" selected disabled >Please Select Country</option>
                 <option value="India" name="country">India</option>
                 <option value="Pakistan" name="country">Pakistan</option>
                 <option value="UAE" name="country">UAE</option>
@@ -62,9 +62,23 @@
         </div>
     </div>
 
-        <div id="noUserAdded">
-            <h1>No User Added</h1>
-        </div>
+    <div class="main-class">
+        <table id="valueTable">
+            <thead id="tableHead">
+                <th class="tableOfValue">Name</th>
+                <th class="tableOfValue">Email</th>
+                <th class="tableOfValue">Password</th>
+                <th class="tableOfValue">Address</th>
+                <th class="tableOfValue">Sports</th>
+                <th class="tableOfValue">Gender</th>
+                <th class="tableOfValue">Country</th>
+                <th class="tableOfValue">Edit</th>
+                <th class="tableOfValue">Delete</th>
+            </thead>
+            <tbody id="tableBody">    
+            </tbody>
+        </table>
+    </div>
 
 
 </body>
