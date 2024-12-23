@@ -90,6 +90,15 @@ span{
     color: red;
     display: none;
 }
+.tableOfValue{
+    padding-right: 85px;
+    padding-top: 14px;
+}
+
+/* #noDataFound{
+    display: none;
+} */
+
 /* 
 #span_pass{
     color: black;
@@ -109,6 +118,14 @@ span{
     display: none;
 } */
 
-.tableOfValue{
-    padding: 20px;
-}
+/* .tableHead{ */
+    /* padding: 20px; */
+    /* display: flex; */
+    /* justify-content: space-around; */
+/* } */
+
+/* .tablehedinglst
+{
+    display: flex;
+    justify-content: space-between;
+} */

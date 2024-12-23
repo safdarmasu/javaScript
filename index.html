@@ -3,8 +3,10 @@
 <head>
     <title>Mega form value handle</title>
 </head>
+<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.rtl.min.css"> -->
 <link rel="stylesheet" href="style.css">
 <body>
+    <div class="container">
     <div class="main-class">
         <div class="name">
             <p><b>Name</b></p>
@@ -35,9 +37,9 @@
         </div>
         <div class="gender">
             <p><b>Choose your gender </b></p><br>
-            <input name="gender" class="chek" type="radio">Male</input><br>
-            <input name="gender" class="chek" type="radio">Female</input><br>
-            <input name="gender" class="chek" type="radio">Prefer not to say</input><br>
+            <input name="gender" class="chek" type="radio" value="Male" >Male</input><br>
+            <input name="gender" class="chek" type="radio" value="Female">Female</input><br>
+            <input name="gender" class="chek" type="radio" value="Prefer not to say">Prefer not to say</input><br>
             <span id="span_gender">Please Select Any one</span>
         </div>
         <div class="your">
@@ -64,25 +66,29 @@
 
     <div class="main-class">
         <table id="valueTable">
-            <thead id="tableHead">
-                <th class="tableOfValue">Name</th>
-                <th class="tableOfValue">Email</th>
-                <th class="tableOfValue">Password</th>
-                <th class="tableOfValue">Address</th>
-                <th class="tableOfValue">Sports</th>
-                <th class="tableOfValue">Gender</th>
-                <th class="tableOfValue">Country</th>
-                <th class="tableOfValue">Edit</th>
-                <th class="tableOfValue">Delete</th>
-            </thead>
-            <tbody id="tableBody">    
+                <thead class="justify-content-between">
+                    <th class="tableOfValue">Name</th>
+                    <th class="tableOfValue">Email</th>
+                    <th class="tableOfValue">Password</th>
+                    <th class="tableOfValue">Address</th>
+                    <th class="tableOfValue">Sports</th>
+                    <th class="tableOfValue">Gender</th>
+                    <th class="tableOfValue">Country</th>
+                    <th class="tableOfValue">Edit</th>
+                    <th class="tableOfValue">Delete</th>
+                </thead>
+      
+            <tbody id="tableBody">
+                <!-- <h2 id="noDataFound">No Data Found</h2> -->
             </tbody>
         </table>
     </div>
+</div>
 
 
 </body>
 
     <script src="script.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </html>
