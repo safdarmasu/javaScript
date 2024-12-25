@@ -256,8 +256,44 @@ function Reset(){
 
 }
 
-function editData(id) {
-    console.log(id);
+function editData(value) {
+    // console.log(id);
+
+    const sportElement = document.getElementById(value);
+
+    console.log(sportElement.children[0].innerHTML);
+
+    Name.value = sportElement.children[0].innerHTML;
+    email.value = sportElement.children[1].innerHTML;
+    pass.value = sportElement.children[2].innerHTML;
+    address.value = sportElement.children[3].innerHTML;
+    country.value = sportElement.children[6].innerHTML;
+
+
+    if(sports.length > 0 ){
+        for (let i = 0; i < sports.length; i++) {
+            const element = sports[i];
+
+            const allValue = sportElement.children[4].innerHTML.split(",");
+             
+            if(allValue.includes(element.value)){
+                element.checked = true;
+            }
+            
+        }
+    }
+
+    if(gender.length > 0){
+        for (let i = 0; i < gender.length; i++) {
+            const ele_ment = gender[i];
+
+            if(ele_ment.value == sportElement.children[5].innerHTML){
+                ele_ment.checked = true;
+            }
+
+        }
+    }
+
 }
 
 function deleteData(id){
@@ -267,6 +303,6 @@ function deleteData(id){
 
 }
 
-if(tableBody.children.length == 0){
-    noDataFound.style.display = "block";
-}
+// if(tableBody.children.length == 0){
+//     noDataFound.style.display = "block";
+// }
