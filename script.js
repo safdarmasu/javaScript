@@ -42,6 +42,8 @@ const deleteImage = `<svg width="15" height="15" viewBox="0 0 15 15" fill="none"
 
 var count = 0;
 
+var isEdit = "";
+
 function Save(){
 
     // Name Span
@@ -184,11 +186,24 @@ function Save(){
 }
 
 function handleTableData(formData){
-        const tr = document.createElement('tr');
+        // const tr = document.createElement('tr');
         // console.log(tr);
 
-        let id = "list_" + count;
-        tr.id = id
+        // let id = "list_" + count;
+
+        var tr;
+        let id;
+
+        if(isEdit){
+            tr = document.getElementById(isEdit);
+            tr.innerHTML = "";
+            id = isEdit;
+        } else{
+            tr = document.createElement("tr");
+            id = "list_" + count;
+        }
+    
+        tr.id = id;
 
         const nameTd = document.createElement('td');
         const emailTd = document.createElement('td');
@@ -258,6 +273,8 @@ function Reset(){
 
 function editData(value) {
     // console.log(id);
+
+    isEdit = value;
 
     const sportElement = document.getElementById(value);
 
